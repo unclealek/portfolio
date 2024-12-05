@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- Dark/Light mode support
+- Fully responsive design
+- Fast and optimized performance
+- Blog section
+- Contact form with email integration
+- GitHub integration
+- Project showcase
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- React Hook Form
+- Yup Validation
+- Nodemailer
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd my-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env` file in the root directory and add your environment variables:
+```env
+EMAIL_USER=your-email@example.com
+EMAIL_PASS=your-email-password
+EMAIL_TO=your-email@example.com
+GITHUB_TOKEN=your-github-token
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Update personal information in the components:
+   - Edit `src/components/sections/Hero.tsx` for the landing page
+   - Edit `src/components/sections/About.tsx` for your bio and skills
+   - Edit `src/components/sections/Projects.tsx` to showcase your work
+   - Edit `src/components/sections/Blog.tsx` for your articles
+   - Edit `src/components/sections/Contact.tsx` for contact information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Replace images:
+   - Add your profile picture in `public/images/profile.jpg`
+   - Add project screenshots in `public/images/`
 
-## Deploy on Vercel
+3. Update social links in `src/components/layout/Navigation.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site can be deployed to various platforms:
+
+- Vercel (Recommended for Next.js)
+- Netlify
+- GitHub Pages
+
+## License
+
+MIT License
