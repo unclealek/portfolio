@@ -17,13 +17,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: yupResolver(schema),
+  const { register, handleSubmit, reset } = useForm({
+    resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data: FormData) => {
@@ -44,7 +39,7 @@ export default function Contact() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -67,9 +62,6 @@ export default function Contact() {
                 {...register('name')}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-colors"
               />
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-              )}
             </div>
 
             <div>
@@ -82,9 +74,6 @@ export default function Contact() {
                 {...register('email')}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-colors"
               />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-              )}
             </div>
 
             <div>
@@ -97,9 +86,6 @@ export default function Contact() {
                 {...register('message')}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-colors"
               />
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-              )}
             </div>
 
             <button

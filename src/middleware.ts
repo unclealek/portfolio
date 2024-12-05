@@ -2,11 +2,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 // Rate limiting configuration (using a simple in-memory store for demo)
-const rateLimit = {
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-  store: new Map()
-}
+const rateLimit = new Map<string, number[]>()
 
 export async function middleware(request: NextRequest) {
   // Basic security headers
@@ -27,20 +23,21 @@ export async function middleware(request: NextRequest) {
   }
 
   // Basic rate limiting
-  const ip = request.ip ?? 'unknown'
+  const clientId = request.headers.get('x-forwarded-for') ?? 
+    request.headers.get('x-real-ip') ?? 
+    'unknown'
   const now = Date.now()
-  const userRequests = rateLimit.store.get(ip) ?? []
+  const windowMs = 15 * 60 * 1000 // 15 minutes
+  const maxRequests = 100
+
+  const userRequests = rateLimit.get(clientId) ?? []
+  const recentRequests = userRequests.filter(time => time > now - windowMs)
   
-  // Clean old requests
-  const recentRequests = userRequests.filter(
-    (time: number) => time > now - rateLimit.windowMs
-  )
-  
-  if (recentRequests.length >= rateLimit.max) {
+  if (recentRequests.length >= maxRequests) {
     return new NextResponse('Too Many Requests', { status: 429 })
   }
   
-  rateLimit.store.set(ip, [...recentRequests, now])
+  rateLimit.set(clientId, [...recentRequests, now])
 
   // Return response with new headers
   const response = NextResponse.next({
