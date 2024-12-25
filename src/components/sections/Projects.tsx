@@ -13,42 +13,42 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project 1",
-    description: "A full-stack web application that helps users manage their tasks and stay organized.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubUrl: "https://github.com/unclealek/project1",
+    title: "ETL-pipeline",
+    description: "This project is a data pipeline designed to extract data from CSV and Excel files, transform the data, and load it into a target database table. It consists of modules for data extraction, transformation, and loading.",
+    technologies: ["Python", "PostgreSQL", "HTTP", "API"],
+    githubUrl: "https://github.com/unclealek/ETL-pipeline",
     liveUrl: "https://project1.com",
     image: "/project1.jpg"
   },
   {
-    title: "Project 2",
-    description: "A full-stack web application that helps users manage their tasks and stay organized.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubUrl: "https://github.com/unclealek/project1",
+    title: "Weather ETL Pipeline",
+    description: "A robust weather monitoring system that collects data from Open-Meteo API based on temperature changes in Kuopio, Finland. The system is orchestrated using Apache Airflow and can be deployed both locally using Astro CLI or on Kubernetes.",
+    technologies: ["Python", "Astro cli", "Docker", "Kubernetes cluster", "Airflow"],
+    githubUrl: "https://github.com/unclealek/weather_ETL",
     liveUrl: "https://project1.com",
     image: "/project1.jpg"
   },
   {
-    title: "Project 3",
-    description: "A full-stack web application that helps users manage their tasks and stay organized.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubUrl: "https://github.com/unclealek/project1",
+    title: "AI Web Scrapper",
+    description: "Using the free ollama3 model to extract only dom-content from a website, there is a chat prompt template deployed for this application.",
+    technologies: ["streamlit", "Python", "langchain", "Selenium", "beautifulSoup"],
+    githubUrl: "https://github.com/unclealek/AI_webScraper",
     liveUrl: "https://project1.com",
     image: "/project1.jpg"
   },
   {
-    title: "Project 4",
-    description: "A full-stack web application that helps users manage their tasks and stay organized.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubUrl: "https://github.com/unclealek/project1",
+    title: "IoT Dashboard",
+    description: "A modern IoT device monitoring system built with Flet, featuring user authentication and device monitoring capabilities.",
+    technologies: ["Python", "Flet", "bcrypt", "mqtt", "SQlAlchemy"],
+    githubUrl: "https://github.com/unclealek/smart-IoT-/tree/main",
     liveUrl: "https://project1.com",
     image: "/project1.jpg"
   },
   {
-    title: "Project 5",
-    description: "A full-stack web application that helps users manage their tasks and stay organized.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubUrl: "https://github.com/unclealek/project1",
+    title: "Animal Classification",
+    description: "This is a supervised trained machine model that allows user to upload an image of the animal and the trained model tells user what animal it is. the interface is built using some html, javascript and node to collect users input.",
+    technologies: ["Python", "Jupyter Notebook", "Javascript", "HTML", "CSS"],
+    githubUrl: "https://github.com/unclealek/Animal_Class",
     liveUrl: "https://project1.com",
     image: "/project1.jpg"
   },
